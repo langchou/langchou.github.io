@@ -1,0 +1,37 @@
+---
+import { Image } from "astro:assets";
+import aboutImg from "@/assets/yuanbao.png";
+import PageLayout from "@/layouts/Base.astro";
+
+const meta = {
+	description: "I'm a starter theme for Astro.build",
+	title: "About",
+};
+---
+
+<PageLayout meta={meta}>
+	<div class="space-y-6">
+		<h1 class="title">About</h1>
+		<p>
+			My name is Jonty, I'm a backend developer looking to change things through programming.
+
+			I am actively learning c++, golang, photography and life. Feel free to follow me on social media.
+
+			I will record some of my technical blogs or my life blogs here.
+		</p>
+		<div class="flex justify-center">
+			<Image
+				alt="A cartoon cactus looking at the 'Astro.build' logo"
+				fetchpriority="high"
+				loading="eager"
+				src={aboutImg}
+			/>
+		</div>
+		<p>Here's some more info about me:</p>
+		<ul class="list-inside list-disc">
+			<li>Now in Hangzhou, Zhejiang, China</li>
+			<li>Hobbies include photography, spending time with my girlfriend and my cat, and playing around with Nas and some electronics.</li>
+			<li>Currently self-studying web development</li>
+		</ul>
+	</div>
+</PageLayout>
