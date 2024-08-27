@@ -1,0 +1,27 @@
+---
+import PageLayout from "@/layouts/Base.astro";
+
+const meta = {
+	description: "FriendLink page",
+	title: "FriendLink",
+};
+---
+
+<PageLayout meta={meta}>
+	<div class="space-y-6">
+		<h1 class="title">FriendLink</h1>
+
+		<!-- Friend Links Section -->
+		<div class="space-y-4">
+			<h2 class="text-lg font-bold">Friend Links</h2>
+			<ul class="list-inside list-disc">
+				<li>
+					<a href="https://blog.zsh.homes" target="_blank" rel="noopener noreferrer">
+						Andy
+					</a>
+				</li>
+				<!-- 你可以在这里继续添加更多友链 -->
+			</ul>
+		</div>
+	</div>
+</PageLayout>
