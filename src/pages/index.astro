@@ -15,6 +15,15 @@ const cactusTech: { desc: string; href: string; title: string }[] = [
 		title: "some things",
 	},
 ];
+
+const friendLinks: { desc: string; href: string; title: string }[] = [
+	{
+		desc: "Visit Andy's blog for more insights.",
+		href: "https://blog.zsh.homes",
+		title: "Andy",
+	},
+	// Add more friend links here
+];
 ---
 
 <PageLayout meta={{ title: "Home" }}>
@@ -45,6 +54,27 @@ const cactusTech: { desc: string; href: string; title: string }[] = [
 			{
 				cactusTech.map(({ desc, href, title }) => (
 					<div class="flex flex-col gap-2 sm:flex-row">
+						<dt>
+							<span class="flex">
+								<a class="cactus-link" href={href} rel="noreferrer" target="_blank">
+									{title}
+								</a>
+								:
+							</span>
+						</dt>
+						<dd>{desc}</dd>
+					</div>
+				))
+			}
+		</dl>
+	</section>
+
+	<section class="mt-16">
+		<h2 class="title mb-4 text-xl">FriendLink</h2>
+		<dl class="space-y-4">
+			{
+				friendLinks.map(({ desc, href, title }) => (
+					<div class="flex flex-col gap-2 sm:flex-row" key={title}>
 						<dt>
 							<span class="flex">
 								<a class="cactus-link" href={href} rel="noreferrer" target="_blank">

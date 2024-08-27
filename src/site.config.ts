@@ -40,10 +40,6 @@ export const menuLinks: { path: string; title: string }[] = [
 		title: "Blog",
 	},
 	{
-		path: "/friendlink/",
-		title: "FriendLink",
-	},
-	{
 		path: "/about/",
 		title: "About",
 	},
