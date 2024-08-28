@@ -2,7 +2,7 @@
 title: "Github Pages+Github Action搭建一个Hugo站点"
 publishDate: "19 Aug 2024"
 description: "搭建Hugo站点"
-tags: ["hugo", "github action"]
+tags: ["example", "blog"]
 draft: false
 ---
 
