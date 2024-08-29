@@ -43,7 +43,13 @@ export const menuLinks: { path: string; title: string }[] = [
 		path: "/about/",
 		title: "About",
 	},
-	
+];
+
+export const footLinks: { path: string; title: string }[] = [
+	{
+		path: "/rss.xml",
+		title: "RSS Feed",
+	},
 ];
 
 // https://expressive-code.com/reference/configuration/
