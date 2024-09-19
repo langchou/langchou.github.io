@@ -8,7 +8,7 @@ draft: false
 
 ## 前言
 
-前段时间通过[华为开发者大赛](https://jontyding.com/posts/i-got-free-huawei-vps/)白嫖了一台机器，部署了一些简单的服务，其中包括一个[探针](https://probe.jontyding.com)，为了防止ip暴露，选择躲在了CloudFlare背后，但是通过CloudFlare CDN后，访问速度下降了一截，于是有了这篇文章，通过优选ip的方式提升访问速度，并且简单介绍一下CloudFlare CDN的工作方式，如有错误或补充，请给我提出[issues](https://github.com/langchou/langchou.github.io/issues/new)
+前段时间通过[华为开发者大赛](https://jontyding.com/posts/i-got-free-huawei-vps/)白嫖了一台机器，部署了一些简单的服务，其中包括一个[探针](https://probe.jontyding.com)，为了防止ip暴露，选择躲在了CloudFlare背后，但是通过CloudFlare CDN后，访问速度下降了一截，于是有了这篇文章，通过优选ip的方式提升访问速度，并且简单介绍一下CloudFlare CDN的工作方式，如有错误或补充，欢迎提出[issues](https://github.com/langchou/langchou.github.io/issues/new)
 
 
 ## CDN工作方式
