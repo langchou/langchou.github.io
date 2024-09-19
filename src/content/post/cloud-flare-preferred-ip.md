@@ -3,7 +3,7 @@ title: "关于CloudFlare优选ip"
 publishDate: "19 Sep 2024"
 description: "CloudFlare优选ip实践和原理"
 tags: ["CloudFlare"]
-draft: true
+draft: false
 ---
 
 ## 前言
@@ -81,9 +81,13 @@ qinglong.baidu.com -> CloudFlare(111.222.222.222) -> 1.2.3.4
 
 ![验证完成](https://img.jontyding.com/jonty-imgs/2024/09/72f74694e39570fa6a4eb49e78ddfff6.png)
 
-### 设置分流
+### 添加解析
 
+验证完成后
 
+最后将我们需要访问的域名，CNAME解析到我们的CDN记录上即可
+
+这里通过增加一条CNAME记录，把我们需要的域名直接解析到了csgo.com上
 
 
 
@@ -92,3 +96,5 @@ qinglong.baidu.com -> CloudFlare(111.222.222.222) -> 1.2.3.4
 最后，使用itDog对优选IP前后进行对比
 
 ![优选前](https://img.jontyding.com/jonty-imgs/2024/09/5ab6ac74d74c567d5f5908e7d1448a45.png)
+
+![优选后](https://img.jontyding.com/jonty-imgs/2024/09/10294f079077c3ad8dbccc7d50d08439.png)
