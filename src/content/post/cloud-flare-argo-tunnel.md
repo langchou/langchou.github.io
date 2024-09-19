@@ -40,12 +40,12 @@ cloudflared tunnel create server-tunnel
 ```
 
 上述的命令会穿件一个名为server-tunnel的隧道，并会返回给你一个隧道id
-0ba13a92-e9f7-4e38-aa71-c9187aa204c8
+
 例如 `Created tunnel server-tunnel with id 0ba13a92-eqwe-asdb-aa71-cqwdklj204c8`
 
 记录下这个id，后续会使用
 
-### 配置Argo Tunnel代理到服务
+## 配置Argo Tunnel代理到服务
 
 假设你的 服务运行在本地 9527 端口上，你需要创建一个配置文件来配置隧道代理
 
