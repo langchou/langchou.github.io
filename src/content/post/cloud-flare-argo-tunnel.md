@@ -7,7 +7,7 @@ draft: false
 ---
 
 ## 背景
-依旧是CloudFlare的一个教程，关于使用Argo Tunnel来穿透一些本地没有公网的服务
+依旧是CloudFlare的一个教程，关于使用Argo Tunnel来穿透一些服务
 
 ## 准备材料
 一个域名，并解析到CloudFlare
@@ -23,7 +23,7 @@ Ubuntu/Debian
 sudo apt-get update && sudo apt-get install cloudflare
 ```
 
-安装好后，使用一下命令登陆到CloudFlare账号
+安装好后，使用以下命令登陆到CloudFlare账号
 
 ### 登陆CloudFlare账号
 ``` bash
@@ -39,7 +39,7 @@ cloudflared tunnel login
 cloudflared tunnel create server-tunnel
 ```
 
-上述的命令会穿件一个名为server-tunnel的隧道，并会返回给你一个隧道id
+上述的命令会创建一个名为server-tunnel的隧道，并会返回给你一个隧道id
 
 例如 `Created tunnel server-tunnel with id 0ba13a92-eqwe-asdb-aa71-cqwdklj204c8`
 
@@ -47,7 +47,7 @@ cloudflared tunnel create server-tunnel
 
 ## 配置Argo Tunnel代理到服务
 
-假设你的 服务运行在本地 9527 端口上，你需要创建一个配置文件来配置隧道代理
+假设你的服务运行在本地9527端口上，你需要创建一个配置文件来配置隧道代理
 
 创建一个config.yml文件，例如放在`/etc/cloudflared/`目录下
 
@@ -80,7 +80,7 @@ cloudflared tunnel route dns server-tunnel server.qqq.com
 sudo nano /etc/systemd/system/cloudflared.service
 ```
 
-编辑 cloudflared.service 文件，然后写入一下内容，需要根据自己的路径和配置进行调整
+编辑 cloudflared.service 文件，然后写入以下内容，需要根据自己的路径和配置进行调整
 
 ``` ini
 [Unit]
