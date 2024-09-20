@@ -15,17 +15,17 @@ draft: false
 
 
 ### 最原始部署方式
-假设你有一个服务器，IP是1.2.3.4，并且部署了一个qinglong面板服务，通过一些操作后，你可以通过1.2.3.4:9527访问此qinglong面板，但你不希望通过ip+端口的形式进行访问，因为很不好记，于是你买了一个域名 baidu.com，并且安装了nginx进行反代理，此时你可以通过qinglong.baidu.com访问1.2.3.4:9527服务，并且此时，你会在DNS服务商处配置一条DNS A记录，从qinglong.baidu.com 指向 1.2.3.4
+假设你有一个服务器，IP是1.2.3.4，并且部署了一个qinglong面板服务，通过一些操作后，你可以通过1.2.3.4:9527访问此qinglong面板，但你不希望通过ip+端口的形式进行访问，因为很不好记，于是你买了一个域名 baidu.com，在安装了nginx后进行反代理，此时你可以通过qinglong.baidu.com访问1.2.3.4:9527服务，并且此时，你会在DNS服务商处配置一条DNS A记录，从qinglong.baidu.com 指向 1.2.3.4
 
-并且此时你通过ping qinglong.baidu.com，也可以看到IP是1.2.3.4
+此时你通过ping qinglong.baidu.com，也可以看到IP是1.2.3.4
 
 
 ### 通过CloudFlare代理
-在该qinglong面板运行了一段时间后，你发现CloudFlare可以提供免费的https证书，并且可以隐藏你的真实IP 1.2.3.4，并且CloudFlare可以为你的站点提供一些防护，于是你把你的baidu.com域名的DNS服务器改到了CloudFlare，并且设置了一条DNS记录：
+在该qinglong面板运行了一段时间后，你发现CloudFlare可以提供免费的https证书，且可以隐藏你的真实IP 1.2.3.4，并且CloudFlare可以为你的站点提供一些防护，于是你把你的baidu.com域名的DNS服务器改到了CloudFlare，并且设置了一条DNS记录：
 
-qinglong.baidu.com 指向 1.2.3.4，并且你开启了CloudFlare的小黄云，也就是CDN代理
+qinglong.baidu.com 指向 1.2.3.4，并开启了CloudFlare的小黄云，也就是CDN代理
 
-现在你可仍然可以通过qinglong.baidu.com访问你的qinglong服务，并且通过ping的形式，你会发现IP从1.2.3.4变成了111.222.222.222，此时你意识到，你对qinglong.baidu.com的访问逻辑变成了： 
+现在你可仍然可以通过qinglong.baidu.com访问你的qinglong服务，通过ping的形式，你会发现IP从1.2.3.4变成了111.222.222.222，此时你意识到，你对qinglong.baidu.com的访问逻辑变成了： 
 qinglong.baidu.com -> CloudFlare(111.222.222.222) -> 1.2.3.4
 
 也就是说，你访问你的域名时，是通过访问CloudFlare提供的网络，并由CloudFlare去与你的真实IP地址去交互。但是此时通过CloudFlare后，你发现访问速度好像慢了一些，但是你觉得也还行，毕竟CloudFlare提供了免费的https证书
