@@ -2,7 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
+/* 内容淡入淡出效果 */
+@keyframes content-fade-in {
+	0% {
+		opacity: 0;
+		transform: scale(0.98);
+	}
+
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+@keyframes content-fade-out {
+	0% {
+		opacity: 1;
+		transform: scale(1);
+	}
+
+	100% {
+		opacity: 0;
+		transform: scale(1.02);
+	}
+}
+
+/* 应用动画 */
+:root {
+	--transition-duration: 0.4s;
+	--transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+::view-transition-old(slide) {
+	animation: content-fade-out var(--transition-duration) var(--transition-timing);
+}
+
+::view-transition-new(slide) {
+	animation: content-fade-in var(--transition-duration) var(--transition-timing);
+}
+
+/* 确保动画期间内容保持在原位 */
+::view-transition-group(slide) {
+	animation: none;
+}
+
 @layer base {
+
 	:root,
 	:root[data-theme="light"] {
 		color-scheme: light;
